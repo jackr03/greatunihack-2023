@@ -1,54 +1,31 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Testing</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quick file share</title>
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
 </head>
 <body>
-	<h1>Testing</h1>
-	<form onsubmit="postData(event)">
-		<input type = "text" id ="text" name="text" placeholder="type something"></input>
-		<input type="submit">
-	</form>
-	<h1 id ="response"></h1>
+    <h1 style="text-align: center;">ENTER YOUR 4 DIGIT CODE</h1>
 
+    <div id="passcode">
+        <form>
+            <input type="text" class="passcodeInput" maxlength="1">
+            <input type="text" class="passcodeInput" maxlength="1">
+            <input type="text" class="passcodeInput" maxlength="1">
+            <input type="text" class="passcodeInput" maxlength="1">
+        </form>
+    </div>
 
+    <div id="passcodeDiv" style="visibility: hidden";>
+        <p>Your password is: <span id="userPasscode">xxxx</span></p>
+    </div>
+
+    <div id="hostRoom">
+
+    </div>
+
+    <script src="scripts.js"></script>
 </body>
-
-
-<script>
-	async function postData(title, body) {
-		event.preventDefault();
-		console.log("posting stuff");
-		const url = 'http://localhost:3000/submit'; // Replace with your API URL
-		const data = {
-		"username": "kyan",
-		"password": "testing"
-		};
-
-		try {
-			const response = await fetch(url, {
-				method: 'POST',
-				headers: {
-					'Content-Type': 'application/json',
-				},
-				body: JSON.stringify(data),
-			});
-
-			if (!response.ok) {
-				throw new Error(`HTTP error! Status: ${response.status}`);
-			}
-
-			responseData = response.json();
-			console.log(responseData.message);
-			
-			   
-			//console.log(response.message);
-		} catch (error) {
-			console.error('Fetch error:', error);
-			document.getElementById('response').textContent = 'POST Request Failed';
-		}
-	}
-</script>
 </html>

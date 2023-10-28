@@ -1,0 +1,25 @@
+body {
+    padding-top: 5%;
+}
+
+h1 {
+    font-size: 50px;
+}
+
+#passcode {
+    /* background-color: red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 125px;
+}
+
+.passcodeInput {
+    /*background-color: blue; */
+    height: 100px;
+    width: 100px;
+    margin-left: 10px;
+    margin-right: 10px;
+    font-size: 35px;
+    text-align: center;
+}
