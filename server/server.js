@@ -5,23 +5,31 @@ const path = require('path');
 
 
 
+
 // use imports 
 
 
-app.use(express.json());
+//app.use(express.json());
 // app.use(cors({
 //   origin: ['http://localhost:3000'] // only accept requests from localhost:3000 header
 // }));
 
-app.get('/', (req, res) => {
-  res.send('Hello World!');
-});
+app.use(express.static('client'));
+
+
+// app.get('/', (req, res) => {
+//   res.send('Hello World!');
+// });
 
 
 
 
 app.get('/homepage', (req, res) => {
   res.sendFile(path.join(__dirname, '/../client/index.html'));
+});
+
+app.get('/homepage/css', (req, res) => {
+  res.sendFile(path.join(__dirname, '/../client/stylesheet.css'));
 });
 
 
