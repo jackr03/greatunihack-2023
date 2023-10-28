@@ -1,9 +1,12 @@
 const express = require('express');
+const dotenv= require('dotenv').config();
 const app = express();
 const port = 3000;
 const path = require('path');
+const connectDB=require('./config/db')
 
 
+connectDB()
 
 // use imports 
 
