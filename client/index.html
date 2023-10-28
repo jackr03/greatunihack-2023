@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Testing</title>
+</head>
+<body>
+	<h1>Testing</h1>
+	<form onsubmit="postData(event)">
+		<input type = "text" id ="text" name="text" placeholder="type something"></input>
+		<input type="submit">
+	</form>
+	<h1 id ="response"></h1>
+
+
+</body>
+
+
+<script>
+	async function postData(title, body) {
+		event.preventDefault();
+		console.log("posting stuff");
+		const url = 'http://localhost:3000/submit'; // Replace with your API URL
+		const data = {
+		"username": "kyan",
+		"password": "testing"
+		};
+
+		try {
+			const response = await fetch(url, {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json',
+				},
+				body: JSON.stringify(data),
+			});
+
+			if (!response.ok) {
+				throw new Error(`HTTP error! Status: ${response.status}`);
+			}
+
+			responseData = response.json();
+			console.log(responseData.message);
+			
+			   
+			//console.log(response.message);
+		} catch (error) {
+			console.error('Fetch error:', error);
+			document.getElementById('response').textContent = 'POST Request Failed';
+		}
+	}
+</script>
+</html>
