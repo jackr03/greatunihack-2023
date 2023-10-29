@@ -1,6 +1,7 @@
 body {
     background-color: #F9D1BA;
     font-family: 'Hammersmith One';
+    font-weight: bold;
 
     display: flex;
     flex-direction: column;

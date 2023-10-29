@@ -10,7 +10,6 @@ passcodeInputs.forEach(input => {
     input.addEventListener('keyup', passcodeRegularHandler);
 });
 
-
 function passcodePasteHandler(e) {
     // Code for passcode handler when pasting
     alert();
@@ -19,13 +18,15 @@ function passcodePasteHandler(e) {
 function passcodeRegularHandler(e) {
     const inputBox = e.target;
     let input = inputBox.value;
-    
+
     if (e.key === "Backspace") {
         inputBox.previousElementSibling.focus();
         inputBox.previousElementSibling.value = "";
+    } else if (!(isFinite(input))) {
+        inputBox.value = "";
     } else {
-        if (input !== e.key) {
-            inputBox.value = e.key;
+        if (input !== e.key && isFinite(input)) {
+            inputBox.value = input;
         }
 
         if (inputBox.nextElementSibling === null) {
@@ -34,7 +35,7 @@ function passcodeRegularHandler(e) {
             inputBox.nextElementSibling.focus();
         }
     }
-
+    
     if (Array.from(passcodeInputs).every(input => input.value.length > 0)) { // Placeholder code for debugging
         const userPasscode = [...passcodeInputs].map((input) => input.value).join('');
         passcodeDiv.style.visibility = "visible";

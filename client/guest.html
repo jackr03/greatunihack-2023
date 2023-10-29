@@ -3,27 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quick file share</title>
+    <link href='https://fonts.googleapis.com/css?family=Hammersmith One' rel='stylesheet'>
     <link rel="stylesheet" type="text/css" href="css/guest.css">
+    <title>Pigeon</title>
 </head>
 <body>
-    <h1 style="font-size: 40px;">ENTER YOUR 4 DIGIT PASSCODE</h1>
+    <div id="bodyTop">
+        <img src="images/logo.png" alt="logo" id="logo">
+        <h1 id="title">Pigeon</h1>
+    </div>
 
     <div id="passcode">
-        <form>
+        <p>ENTER YOUR 4-DIGIT PIGEON CODE</p>
+        <form id="passcodeInputs">
             <input type="text" class="passcodeInput" maxlength="1">
             <input type="text" class="passcodeInput" maxlength="1">
             <input type="text" class="passcodeInput" maxlength="1">
             <input type="text" class="passcodeInput" maxlength="1">
         </form>
-    </div>
-
-    <div id="passcodeDiv" style="visibility: hidden";>
-        <p>Your password is: <span id="userPasscode">xxxx</span></p>
-    </div>
-
-    <div id="hostRoom">
-
     </div>
 
     <script src="js/guest.js"></script>
