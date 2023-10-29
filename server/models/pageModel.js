@@ -13,15 +13,17 @@ const roomSchema = new mongoose.Schema({
       type: Number,
       required: true,
     },
-    urls: {
-      type: [String], // This defines an array of strings
+    imageData: {
+      type: Buffer, // This defines an array of strings
+       data: []
     },
   });
   
   // Create a Mongoose model using the schema
-  const Room = mongoose.model('Room', roomSchema);
+  const Room = mongoose.model('Room2', roomSchema);
   
   module.exports = Room;
+
   
   
   
