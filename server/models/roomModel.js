@@ -19,7 +19,7 @@ const roomSchema = new mongoose.Schema({
   });
   
   // Create a Mongoose model using the schema
-  const Room = mongoose.model('Room', roomSchema);
+  const Room = mongoose.model('Room2', roomSchema);
   
   module.exports = Room;
   

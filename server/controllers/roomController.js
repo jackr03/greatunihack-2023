@@ -1,5 +1,5 @@
 const asyncHandler = require('express-async-handler')
-const Room = require('../models/roomModel')
+const Room = require('../models/pageModel')
 
 const getRooms = async (req, res) => {
     const rooms = await Room.find()
