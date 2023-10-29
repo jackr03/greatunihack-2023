@@ -6,33 +6,20 @@
     <title>Upload/download files</title>
     <link rel="stylesheet" type="text/css" href="css/room.css">
 </head>
-<body id="host">
-    <div id="leftSide">
-        <div id="roomPasscode">
-            <p style="font-size: 45px;">ROOM CODE</p>
-            <p style="font-size: 40px;">1234</p>
-        </div>
-    
-       <div id="userList">
-            <p style="font-size: 40px;">USERS</p>
-       </div>
+<body>
+    <div id="roomPasscode">
+        <p style="font-size: 30px;">ROOM CODE</p>
+        <p style="font-size: 30px;">1234</p>
     </div>
     
    <div id="files">
-        <div id="filesTop">
-            <p style="font-size: 40px;">FILES</p>
-            <p style="font-size: 40px;">DOWNLOAD</p>
+        <div id="filesList">
+
         </div>
 
-        <div id="dropZone">
-            <div id="filesList">
-
-            </div>
-    
-            <div id="filesBottom">
-                <label for="addFile" id="addFileLabel">Click here to upload files, or drag and drop</label>
-                <input type="file" id="addFile" name="addFile" onchange="uploadFile()" multiple>
-            </div>
+        <div id="filesBottom">
+            <label for="addFile" id="dropZone" style="font-size:25px">Drag and drop or click here<p style="font-size:18px;">to upload your file</p></label>
+            <input type="file" id="addFile" name="addFile" onchange="uploadFile()" multiple>
         </div>
    </div>
 

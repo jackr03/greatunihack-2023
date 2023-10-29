@@ -1,126 +1,99 @@
-
-
-#host {
+body {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
 
     padding-top: 3%;
     padding-bottom: 3%;
-}
 
-#leftSide {
-
-    display: flex;
-    flex-direction: column;
-
-    margin-left: 3%;
-    margin-right: 2%;
-
-    height: 800px;
-    width: 35%;
+    background-color: #a08685;
 }
 
 #roomPasscode {
-    border: 2px solid black;
-
     display: flex;
-
-    height: 25%;
-    width: 100%;
-
-    margin-bottom: 2.5%;
-
-    flex-direction: column;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
-}
 
-#roomPasscode > p {
-    margin-top: 5%;
-    margin-bottom: 5%;
-}
-
-#userList {
-    border: 2px solid black;
-    display: flex;
-
-    height: 70%;
-    width: 100%;
-
-    margin-top: 2.5%;
+    width: 80%;
+    margin-bottom: 1%;
     
-    flex-direction: row;
-    justify-content: center;
-    align-items: flex-start;
+    border: 2px solid #babec5;
+    border-radius: 10px;
 
+    background-color: #322e36;
+    color: white;
 }
 
 #files {
-    border: 2px solid black;
-
     display: flex;
     flex-direction: column;
 
-    margin-left: 2%;
-    margin-right: 3%;
-    width: 900px;
+    width: 80%;
     height: 800px;
+    margin-top: 1%;
+
+    border: 2px solid #babec5;
+    border-radius: 10px;
+
+    background-color: #e2dcd2;
+    color: #322e36;
 }
 
 #filesTop {
-    border-bottom: 2px solid black;
     display: flex;
     justify-content: space-around;
-}
+    align-items: center;
 
-#filesTop > p {
-    margin-top: 2.5%;
-    margin-bottom: 2.5%;
-}
+    height: 7.5%;
 
-#dropZone {
-    background-color: white;
-}
-
-#dropZone.highlight {
-    background-color: red;
+    border-bottom: 2px solid black;
 }
 
 #filesList {
     display: flex;
     flex-direction: column;
 
+    height: 70%;
     padding-top: 1%;
     padding-left: 5%;
-
-    
-}
-
-#filesList > p {
-    font-size: 20px;
 }
 
 #filesBottom {
+    height: 30%;
+
     display: flex;
     justify-content: center;
+}
 
+#dropZone {
+    background-color: rgb(188, 233, 249);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    width: 50%;
+
+    margin-bottom: 5%;
+
+    border: 2px dashed blue;
+    border-radius: 10px;
+}
+
+#dropZone > p {
     margin-top: 2%;
 }
+
+#dropZone:hover {
+    background-color: rgb(167, 229, 251);
+    cursor: pointer;
+}
+
+#dropZone.highlight {
+    background-color: rgb(16, 63, 109);
+}
+
 #addFile {
     display: none;
-}
-
-#addFileLabel {
-    text-align: center;
-    font-size: 25px;
-
-    padding: 1%;
-    border: 2px dashed blue;
-    border-radius: 5px;
-}
-
-#addFileLabel:hover {
-    color: blue;
-    cursor: pointer;
 }
