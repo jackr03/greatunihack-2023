@@ -1,5 +1,5 @@
 const asyncHandler = require('express-async-handler')
-const Room = require('../models/roomModel')
+const Room = require('../models/pageModel')
 
 // Checks existence of records for a given id
 const getRooms = async (req, res) => { 
