@@ -1,10 +1,34 @@
 const asyncHandler = require('express-async-handler')
 const Room = require('../models/roomModel')
 
+// Checks existence of records for a given id
 const getRooms = async (req, res) => { 
+    const rooms = await Room.count( { keyroom: { $eq: req.body.keyroom } } )
+    if (rooms == 0) {
+        res.status(404).json("not ok")
+    } else {
+        res.status(200).json(
+            "ok"
+        )
+    }
+}
+
+// Actually returns records at id
+const returnRooms = async (req, res) => { 
+    const rooms = await Room.find( { keyroom: { $eq: req.body.keyroom } } )
+    if (JSON.stringify(rooms) == "[]") {
+        res.status(404).json("not ok")
+    } else {
+        res.status(200).json({
+            rooms
+        })
+    }
+}
+
+// Return all collections
+const getAllRooms = async (req, res) => { 
+    console.log("Get all rooms")
     const rooms = await Room.find()
-    console.log("Room key is: " + req.body.keyroom)
-    const roomkey= rooms.users.find({roomkey: req.body.keyroom},{},{},{})
     res.status(200).json(rooms)
 }
 
@@ -32,5 +56,5 @@ const deleteRoom = asyncHandler(async (req, res) => {
 })
 
 module.exports = {
-    getRooms, setRoom, updateRoom, deleteRoom
+    getRooms, setRoom, updateRoom, deleteRoom, getAllRooms, returnRooms
 }
