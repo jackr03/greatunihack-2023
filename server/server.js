@@ -2,6 +2,8 @@ const express = require('express');
 const asyncHandler = require('express-async-handler')
 const dotenv= require('dotenv').config();
 const app = express();
+const { connectDB } = require('./config/db')
+const port = process.env.PORT || 5000;
 const path = require('path');
 const bodyParser = require('body-parser')
 app.use(bodyParser.json());
@@ -9,9 +11,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 const homepageRouter = require('./Routes/homepageRouter');
 const cookieParser = require('cookie-parser');
 const session = require('express-session');
-
-const { connectDB } = require('./config/db')
-const port = process.env.PORT || 5000;
 const multer  = require('multer')
 const { errorHandler } = require('./middleware/errorMiddleware')
 const Text = require('./models/pageModel');
@@ -34,57 +33,53 @@ app.use("/homepage", homepageRouter);
 
 // use imports 
 
-
 app.use(express.json());
 app.use(express.urlencoded({ extended: false}))
-<<<<<<< HEAD
-=======
 // Set up the storage engine for multer
 const storage = multer.memoryStorage(); // Store image data in memory
 const upload = multer({
   storage: storage,
   limits: { fileSize: 2 * 1024 * 1024 }, // 2MB limit
 });
->>>>>>> database
+
 
 // app.use(cors({
 //   origin: ['http://localhost:3000'] // only accept requests from localhost:3000 header
 // }));
-
-app.get('/', (req, res) => {
-  res.send("Hello World.");
-});
 app.use('/api/rooms', require('./routes/roomRoutes'))
 
 app.use(errorHandler)
 
+app.get('/', (req, res) => {
+  res.send('Hello World!');
+});
 
+app.get('/homepage', (req, res) => {
+  res.sendFile(path.join(__dirname, '/../client/index.html'));
+});
+
+app.get('/room', (req, res) => {
+  res.sendFile(path.join(__dirname, '/../client/room.html'));
+});
 
 app.get('/nice', (req, res) => {
   res.sendFile(path.join(__dirname, '/../client/homepage/nice.html'));
 });
+
 app.get('/guestroom',(req, res) => {
 
   roomNo = req.session.room;
   res.render("guestroom", {room: roomNo});
 
 });
-
 app.post('/submit', (req, res) => {
-      res.send({ "message": "something"});
-      
-
+  res.send({ "message": "something"});
 })
-
-
 
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`);
 });
 
-<<<<<<< HEAD
-
-=======
 // Handle image uploads
 app.post('/upload', upload.single('textFile'),async (req, res) => {
 
@@ -94,7 +89,7 @@ app.post('/upload', upload.single('textFile'),async (req, res) => {
    
   try {
     const room = await Text.create({
-      keyroom: 1189,
+      keyroom: req.session.key,
       hostid: 6565,
       password: 12345,
       imageData: defaultImageBuffer,
@@ -108,4 +103,3 @@ app.post('/upload', upload.single('textFile'),async (req, res) => {
     res.status(500).send('Error uploading image');
   }
 });
->>>>>>> database
