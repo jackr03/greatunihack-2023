@@ -1,46 +1,44 @@
 const express = require('express');
 const app = express();
 const port = 3000;
-const path = require('path');
+const path = require("path");
+const bodyParser = require('body-parser')
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+const homepageRouter = require('./Routes/homepageRouter');
+const cookieParser = require('cookie-parser');
+const session = require('express-session');
+
+// sets views for ejs (it is under client folder)
+app.set('views', path.join(__dirname, '/../client/views'))
+app.set('view engine', 'ejs');
 
 
 
 
-// use imports 
+app.use(cookieParser());
+app.use(session({secret: "Shh, its a secret!"}));
 
+app.use("/homepage", homepageRouter);
 
-//app.use(express.json());
-// app.use(cors({
-//   origin: ['http://localhost:3000'] // only accept requests from localhost:3000 header
-// }));
-
-app.use(express.static('client'));
-
-
-// app.get('/', (req, res) => {
-//   res.send('Hello World!');
-// });
-
-
-
-
-app.get('/homepage', (req, res) => {
-  res.sendFile(path.join(__dirname, '/../client/index.html'));
+app.get('/', (req, res) => {
+  res.send("Hello World.");
 });
 
-app.get('/homepage/css', (req, res) => {
-  res.sendFile(path.join(__dirname, '/../client/stylesheet.css'));
+app.get('/guestroom',(req, res) => {
+
+    roomNo = req.session.room;
+    res.render("guestroom", {room: roomNo});
+
 });
 
 
-app.post('/submit', (req, res) => {
-      res.send({ "message": "something"});
-      
-
-})
-
-
+app.get('/nice', (req, res) => {
+  res.sendFile(path.join(__dirname, '/../client/homepage/nice.html'));
+});
 
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`);
 });
+
+

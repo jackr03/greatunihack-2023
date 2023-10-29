@@ -23,3 +23,9 @@ h1 {
     font-size: 35px;
     text-align: center;
 }
+
+#myButton {
+
+    height: 50px;
+    width: 50px;
+}
