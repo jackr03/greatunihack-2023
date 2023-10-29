@@ -35,18 +35,21 @@ const getAllRooms = async (req, res) => {
 }
 
 const setRoom = asyncHandler(async (req, res) => {
-    if (!req.body.text) {
-        res.status(400)
-        throw new Error("Please add a text field")
-    }
-
+    // if (!req.body.text) {
+    //     res.status(400)
+    //     throw new Error("Please add a text field")
+    // }
+    // generate random 4-digit int 
+    const random4DigitNumber = Math.floor(Math.random() * (9999 - 1000 + 1)) + 1000;
     const room = await Room.create({
-        keyroom: req.body.keyroom,
-        hostid: req.body.hostid,
-        password: req.body.password,
-        text: req.body.text
+        keyroom: random4DigitNumber,
+        hostid: 1,
+        password: 1,
+        text: "sidjsakdjajdsa"
       });
-    res.status(201).json(room)
+    // set session of keyroom: 
+    req.session.keyroom = random4DigitNumber; 
+    res.status(201).json("ok")
 })
 
 const updateRoom = asyncHandler(async (req, res) => {

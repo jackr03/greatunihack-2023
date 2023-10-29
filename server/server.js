@@ -40,11 +40,41 @@ app.use(express.urlencoded({ extended: false}))
 // }));
 
 app.get('/', (req, res) => {
-  res.send("Hello World.");
+  res.render("frontpage");
 });
+
+
 app.use('/api/rooms', require('./routes/roomRoutes'))
 
 app.use(errorHandler)
+
+app.get('/frontpage/css', (req, res) => {
+  res.sendFile(path.join(__dirname, '/../client/frontpage/frontpage.css'));
+});
+
+app.get('/images/logo', (req, res) => {
+  res.sendFile(path.join(__dirname, '/../client/frontpage/logo.png'));
+});
+
+app.get('/frontpage/js', (req, res) => {
+  res.sendFile(path.join(__dirname, '/../client/frontpage/frontpage.js'));
+});
+
+
+app.get('/hostroom/css', (req, res) => {
+  res.sendFile(path.join(__dirname, '/../client/hostroom/hostroom.js'));
+});
+
+app.get('/hostroom/js', (req, res) => {
+  res.sendFile(path.join(__dirname, '/../client/hostroom/hostroom.js'));
+});
+
+
+app.get('/hostroom', (req, res) => {
+  // need to set room key
+
+  res.render("hostroom", {keyroom: req.session.keyroom});
+});
 
 
 

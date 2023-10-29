@@ -1,31 +1,68 @@
 body {
-    padding-top: 5%;
+    background-color: #F9D1BA;
+    font-family: 'Hammersmith One';
+    font-weight: bold;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-h1 {
-    font-size: 50px;
-}
-
-#passcode {
-    /* background-color: red; */
+#bodyTop {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 125px;
+    
+    width: 50%;
+    margin-bottom: 5%;
+}
+
+#logo {
+    width: 70px;
+    height: 70px;
+    margin-right: 10px;
+}
+
+#title {
+    font-size: 50px;
+    margin-left: 10px;
+}
+
+#passcode {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+    height: 200px;
+    width: 50%;
+}
+
+#passcode > p {
+    font-size: 30px;
+}
+
+#passcodeInputs {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    
+    height: 70%;
+    width: 100%;
+    margin-top: 30px;
 }
 
 .passcodeInput {
-    /*background-color: blue; */
+    font-size: 70px;
+    font-family: 'Hammersmith One';
+    text-align: center;
+
     height: 100px;
     width: 100px;
     margin-left: 10px;
     margin-right: 10px;
-    font-size: 35px;
-    text-align: center;
-}
 
-#myButton {
-
-    height: 50px;
-    width: 50px;
+    border: 8px solid black;
+    border-radius: 20px;
 }
