@@ -10,9 +10,10 @@ passcodeInputs.forEach(input => {
     input.addEventListener('keyup', passcodeRegularHandler);
 });
 
+
 function passcodePasteHandler(e) {
     // Code for passcode handler when pasting
-    return;
+    alert();
 }
 
 function passcodeRegularHandler(e) {

@@ -7,7 +7,6 @@ h1 {
 }
 
 #passcode {
-    /* background-color: red; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -15,7 +14,6 @@ h1 {
 }
 
 .passcodeInput {
-    /*background-color: blue; */
     height: 100px;
     width: 100px;
     margin-left: 10px;

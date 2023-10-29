@@ -1,0 +1,126 @@
+
+
+#host {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding-top: 3%;
+    padding-bottom: 3%;
+}
+
+#leftSide {
+
+    display: flex;
+    flex-direction: column;
+
+    margin-left: 3%;
+    margin-right: 2%;
+
+    height: 800px;
+    width: 35%;
+}
+
+#roomPasscode {
+    border: 2px solid black;
+
+    display: flex;
+
+    height: 25%;
+    width: 100%;
+
+    margin-bottom: 2.5%;
+
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#roomPasscode > p {
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+#userList {
+    border: 2px solid black;
+    display: flex;
+
+    height: 70%;
+    width: 100%;
+
+    margin-top: 2.5%;
+    
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+
+}
+
+#files {
+    border: 2px solid black;
+
+    display: flex;
+    flex-direction: column;
+
+    margin-left: 2%;
+    margin-right: 3%;
+    width: 900px;
+    height: 800px;
+}
+
+#filesTop {
+    border-bottom: 2px solid black;
+    display: flex;
+    justify-content: space-around;
+}
+
+#filesTop > p {
+    margin-top: 2.5%;
+    margin-bottom: 2.5%;
+}
+
+#dropZone {
+    background-color: white;
+}
+
+#dropZone.highlight {
+    background-color: red;
+}
+
+#filesList {
+    display: flex;
+    flex-direction: column;
+
+    padding-top: 1%;
+    padding-left: 5%;
+
+    
+}
+
+#filesList > p {
+    font-size: 20px;
+}
+
+#filesBottom {
+    display: flex;
+    justify-content: center;
+
+    margin-top: 2%;
+}
+#addFile {
+    display: none;
+}
+
+#addFileLabel {
+    text-align: center;
+    font-size: 25px;
+
+    padding: 1%;
+    border: 2px dashed blue;
+    border-radius: 5px;
+}
+
+#addFileLabel:hover {
+    color: blue;
+    cursor: pointer;
+}

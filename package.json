@@ -1,0 +1,31 @@
+{
+  "name": "greatunihack-2023",
+  "version": "1.0.0",
+  "description": "File transfer website",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon server/server.js",
+    "server": "nodemon server/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jackr03/greatunihack-2023.git"
+  },
+  "author": "Kevin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jackr03/greatunihack-2023/issues"
+  },
+  "homepage": "https://github.com/jackr03/greatunihack-2023#readme",
+  "dependencies": {
+    "colors": "^1.4.0",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "express-async-handler": "^1.2.0",
+    "mongoose": "^7.6.3",
+    "multer": "^1.4.5-lts.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}

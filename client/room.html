@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload/download files</title>
+    <link rel="stylesheet" type="text/css" href="css/room.css">
+</head>
+<body id="host">
+    <div id="leftSide">
+        <div id="roomPasscode">
+            <p style="font-size: 45px;">ROOM CODE</p>
+            <p style="font-size: 40px;">1234</p>
+        </div>
+    
+       <div id="userList">
+            <p style="font-size: 40px;">USERS</p>
+       </div>
+    </div>
+    
+   <div id="files">
+        <div id="filesTop">
+            <p style="font-size: 40px;">FILES</p>
+            <p style="font-size: 40px;">DOWNLOAD</p>
+        </div>
+
+        <div id="dropZone">
+            <div id="filesList">
+
+            </div>
+    
+            <div id="filesBottom">
+                <label for="addFile" id="addFileLabel">Click here to upload files, or drag and drop</label>
+                <input type="file" id="addFile" name="addFile" onchange="uploadFile()" multiple>
+            </div>
+        </div>
+   </div>
+
+    <script src="js/room.js"></script>
+</body>
+</html>
