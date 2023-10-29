@@ -1,1 +1,41 @@
-<h1><%= keyroom %></h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://fonts.googleapis.com/css?family=Hammersmith One' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/hostroom/css">
+    <link rel="icon" href="/images/logo" type="image/png">
+    <title>Pigeon</title>
+</head>
+<body>
+    <div id="bodyTop">
+        <img src="/images/logo" alt="logo" id="logo">
+        <h1 id="title">Pigeon</h1>
+    </div>
+
+    <div id="roomPasscode">
+        <p>Your room pigeon code:</p>
+        <p id = "passCode"><%= keyroom %></p>
+    </div>
+    
+   <div id="files">
+        <div id="fileTop">
+            <ul id="fileList">
+                <li class="fileNames">paskdpaskd.pdf</li>
+                <li class="fileNames">oamsodasd.png</li>
+                <li class="fileNames">oaskdox__.jpg</li>
+                <li class="fileNames">paskdpas.gif</li>
+            </ul>
+        </div>
+
+        <div id="fileBottom">
+            <label for="addFile" id="dropZone" style="font-size:25px"><img src="/images/arrow_up">Drag and drop or click here<p>to upload your file</p></label>
+            <input type="file" id="addFile" name="addFile" onchange="uploadFile()" multiple>
+        </div>
+   </div>
+
+    <script src="/hostroom/js"></script>
+</body>
+</html>

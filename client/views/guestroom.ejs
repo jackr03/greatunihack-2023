@@ -1,11 +1,44 @@
 
-<html>
-<head>
-    <title>Room</title>
-</head>
-<body>
-    <h1>YOUR ROOM IS: </h1>
-    <h1><%= room %></h1>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href='https://fonts.googleapis.com/css?family=Hammersmith One' rel='stylesheet'>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="/guestroom/css">
+        <link rel="icon" href="/images/logo" type="image/png">
+        <title>Pigeon</title>
+    </head>
+    <body>
+        <div id="bodyTop">
+            <img src="/images/logo" alt="logo" id="logo">
+            <h1 id="title">Pigeon</h1>
+        </div>
+    
+        <div id="roomPasscode">
+            <p>Your room pigeon code:</p>
+            <p id="passCode"><%= room %></p>
+        </div>
+        
+       <div id="files">
+            <div id="fileTop">
+                <ul id="fileList">
+                    <li class="fileNames">paskdpaskd.pdf<img src="/images/square-check-regular" alt="checkbox" onclick="checkbox(this)"></li>
+                    <li class="fileNames">oamsodasd.png<img src="/images/square-check-regular" alt="checkbox" onclick="checkbox(this)"></li>
+                    <li class="fileNames">oaskdox__.jpg<img src="/images/square-check-regular" alt="checkbox" onclick="checkbox(this)"></li>
+                    <li class="fileNames">paskdpas.gif<img src="/images/square-check-regular" alt="checkbox" onclick="checkbox(this)"></li>
+                </ul>
+            </div>
+    
+            <div id="fileBottom">
+                <form action="/downloadSingle" method="get">
+                    <button type="submit" id="downloadButton">Download files<img src="/images/download-solid"></button>
+                </form>
+            </div>
+       </div>
+    
+        <script src="/guestroom/js"></script>
+    </body>
+    </html>
 
-</body>
-</html>

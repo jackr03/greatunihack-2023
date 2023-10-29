@@ -87,12 +87,18 @@ body {
     border-radius: 8px;
 }
 
+.fileNames > img {
+    float: right;
+    height: 25px;
+    width: 25px;
+}
+
 #fileBottom {
     display: flex;
     justify-content: center;
 }
 
-#dropZone {
+#downloadButton {
     background-color: rgb(188, 233, 249);
 
     display: flex;
@@ -109,25 +115,12 @@ body {
     border-radius: 10px;
 }
 
-#dropZone > img {
+#downloadButton > img {
     height: 50px;
     width: 50px;
 }
 
-#dropZone > p {
-    font-size: 18px;
-    margin-top: 2%;
-}
-
-#dropZone:hover {
+#downloadButton:hover {
     background-color: rgb(167, 229, 251);
     cursor: pointer;
-}
-
-#dropZone.highlight {
-    background-color: rgb(16, 63, 109);
-}
-
-#addFile {
-    display: none;
 }

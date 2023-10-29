@@ -47,9 +47,6 @@ const upload = multer({
 //   origin: ['http://localhost:3000'] // only accept requests from localhost:3000 header
 // }));
 
-app.get('/', (req, res) => {
-  res.send("Hello World.");
-});
 
 app.get('/', (req, res) => {
   res.render("frontpage");
@@ -67,13 +64,32 @@ app.get('/images/logo', (req, res) => {
   res.sendFile(path.join(__dirname, '/../client/frontpage/logo.png'));
 });
 
+app.get('/images/arrow_up', (req, res) => {
+  res.sendFile(path.join(__dirname, '/../client/hostroom/cloud-arrow-up-solid.svg'));
+});
+
+app.get('/images/square-check-regular', (req, res) => {
+  res.sendFile(path.join(__dirname, '/../client/guestroom/square-check-regular.svg'));
+});
+
+app.get('/images/download-solid', (req, res) => {
+  res.sendFile(path.join(__dirname, '/../client/guestroom/download-solid.svg'));
+});
+
+app.get('/images/square-check-solid', (req, res) => {
+  res.sendFile(path.join(__dirname, '/../client/guestroom/square-check-solid.svg'));
+
+});
+
+
+
 app.get('/frontpage/js', (req, res) => {
   res.sendFile(path.join(__dirname, '/../client/frontpage/frontpage.js'));
 });
 
 
 app.get('/hostroom/css', (req, res) => {
-  res.sendFile(path.join(__dirname, '/../client/hostroom/hostroom.js'));
+  res.sendFile(path.join(__dirname, '/../client/hostroom/hostroom.css'));
 });
 
 app.get('/hostroom/js', (req, res) => {
@@ -109,6 +125,16 @@ app.get('/guestroom',(req, res) => {
   res.render("guestroom", {room: roomNo});
 
 });
+
+app.get('/guestroom/css', (req, res) => {
+  res.sendFile(path.join(__dirname, '/../client/guestroom/guestroom.css'));
+});
+
+app.get('/guestroom/js', (req, res) => {
+  res.sendFile(path.join(__dirname, '/../client/guestroom/guestroom.js'));
+});
+
+
 app.post('/submit', (req, res) => {
   res.send({ "message": "something"});
 })
@@ -117,11 +143,25 @@ app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`);
 });
 
+
+
+app.get('/downloadSingle',function(req,res) {
+  console.log('single file');
+   
+  // Download function provided by express
+  res.download(path.join(__dirname, '/../client/guestroom/guestroom.js'), function(err) {
+      if(err) {
+          console.log(err);
+      }
+  })
+})
+
+
 // Handle image uploads
 app.post('/upload', upload.single('textFile'),async (req, res) => {
 
    // Path to your default PNG image
-   const defaultImagePath = path.join(__dirname, './uploads/mttext');
+   const defaultImagePath = path.join(__dirname, './uploads/mttex');
    const defaultImageBuffer = fs.readFileSync(defaultImagePath);
    
   try {
