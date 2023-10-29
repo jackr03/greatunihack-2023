@@ -39,15 +39,15 @@ async function postData (event)  {
 
 
     try {
-        const response = await fetch('/homepage/tryjoin', {
+        const response = await fetch('/api/rooms/find', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({ room: userPasscode.innerText }),
+            body: JSON.stringify({ keyroom: userPasscode.innerText }),
         });
 
-        if (!response.ok) {
+        if (!response.ok) { 
             throw new Error(`HTTP error! Status: ${response.status}`);
         }
 
@@ -56,7 +56,7 @@ async function postData (event)  {
         console.log(something);
         another = JSON.stringify("ok");
         if (something == another){
-            window.location.href = "http://localhost:3000/guestroom";
+            window.location.href = "http://localhost:5000/guestroom";
         }
         //window.location.href = "http://localhost:3000/guestroom";
     } catch (error) {

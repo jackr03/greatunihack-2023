@@ -3,7 +3,9 @@ const Room = require('../models/roomModel')
 
 // Checks existence of records for a given id
 const getRooms = async (req, res) => { 
+    console.log("Get room")
     const rooms = await Room.count( { keyroom: { $eq: req.body.keyroom } } )
+    console.log(rooms)
     if (rooms == 0) {
         res.status(404).json("not ok")
     } else {
