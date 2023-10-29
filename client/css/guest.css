@@ -1,0 +1,29 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    padding-top: 5%;
+
+    background-color: #a08685;
+}
+
+#passcode {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 30%;
+    width: 50%;
+}
+
+.passcodeInput {
+    height: 100px;
+    width: 100px;
+    margin-left: 10px;
+    margin-right: 10px;
+
+    font-size: 35px;
+    text-align: center;
+}

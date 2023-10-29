@@ -3,29 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quick file share</title>
-    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <link href='https://fonts.googleapis.com/css?family=Hammersmith One' rel='stylesheet'>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="icon" href="images/logo.png" type="image/png">
+    <title>Pigeon</title>
 </head>
 <body>
-    <h1 style="text-align: center;">ENTER YOUR 4 DIGIT CODE</h1>
-
-    <div id="passcode">
-        <form>
-            <input type="text" class="passcodeInput" maxlength="1">
-            <input type="text" class="passcodeInput" maxlength="1">
-            <input type="text" class="passcodeInput" maxlength="1">
-            <input type="text" class="passcodeInput" maxlength="1">
-        </form>
+    <div id="bodyTop">
+        <img src="images/logo.png" alt="logo" id="logo">
+        <h1 id="title">Pigeon</h1>
     </div>
-
-    <div id="passcodeDiv" style="visibility: hidden";>
-        <p>Your password is: <span id="userPasscode">xxxx</span></p>
+    <div id="bodyBottom">
+        <a type="button" href="guest.html" target="_self" class="homeButton"><span>guest</span></a>
+        <a type="button" href="host.html" target="_self" class="homeButton"><span>host</span></a>
     </div>
-
-    <div id="hostRoom">
-
-    </div>
-
-    <script src="js/index.js"></script>
 </body>
 </html>
